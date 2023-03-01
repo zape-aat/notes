@@ -1,0 +1,18 @@
+Add Recommendations to your app with TensorFlow Lite and Firebase - Android Codelab 可能遇到的問題和解決辦法
+https://firebase.google.com/codelabs/contentrecommendation-android#10
+
+(第10步) 存取 gs://firebase-recommendations/recommendations-test/formatted_data_filtered.txt 時會出現 access denied，耐心等待 Analytics 的資料吧
+
+(第10步) 在 firebase console link 了 BigQuery 以後可能需要等待數天，雖然看資料說 24 小時後，但是我等了 2 天，BigQuery 才自動建立 DataSet
+
+(第11步 - Import data) table ID 需要更改為自動建立的 Table ID 才能使用
+
+(第11步 - Import data) items 長度可能為 0，這時候請使用 WHERE ARRAY_LENGTH(items) > 0
+
+(第11步 - Preprocess the dataset) 它可能會說你 movie id 型別錯誤，使用 int() 即可
+
+(第11步 - Preprocess the dataset) 
+
+No module named model.recommendation_model_launcher_keras
+
+由於在 /content/examples/lite/examples/recommendation/ml/ 已經沒有這個 model 了，我們可以 clone niap123/ml (github.com)，這裡有需要的 model
