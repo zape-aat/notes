@@ -20,3 +20,7 @@ No module named model.recommendation_model_launcher_keras
 (第11步 - Train model)
 
 另外，建議把 num_epochs 調低一點，不然可以需要很長時間
+
+(第13步) 點擊 Recommendations 會出現錯誤 java.lang.ClassCastException: com.google.firebase.ml.modeldownloader.CustomModel cannot be cast to java.io.File
+
+問題出現在 tflite = Interpreter(model as File) 這一句，由於這時候 model 不是 ByteBuffer，直接以 File 載入 Interpreter 會發生錯誤，先把它轉換為 ByteBuffer 再載入到 Interpreter 即可。最後記住要先在 Ｍovies 點擊幾個選項，不然 Recommendations 會一直空白
