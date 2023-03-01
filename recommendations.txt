@@ -16,3 +16,7 @@ https://firebase.google.com/codelabs/contentrecommendation-android#0
 No module named model.recommendation_model_launcher_keras
 
 由於在 /content/examples/lite/examples/recommendation/ml/ 已經沒有這個 model 了，我們可以 clone niap123/ml (github.com)，這裡有需要的 model
+
+(第11步 - Train model)
+
+另外，建議把 num_epochs 調低一點，不然可以需要很長時間
